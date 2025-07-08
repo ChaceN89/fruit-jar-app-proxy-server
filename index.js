@@ -18,6 +18,10 @@ if (!FRUITS_API_PATH || !FRUITS_API_KEY) {
 
 app.use(cors())
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Fruit Jar App Proxy Server!')
+})
+
 app.get('/api/fruits', async (req, res) => {
   try {
     const response = await fetch(FRUITS_API_PATH, {
