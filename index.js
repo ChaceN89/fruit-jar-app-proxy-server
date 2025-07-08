@@ -26,7 +26,11 @@ app.get('/api/fruits', async (req, res) => {
   try {
     const response = await fetch(FRUITS_API_PATH, {
       headers: {
-        'x-api-key': FRUITS_API_KEY
+        'x-api-key': FRUITS_API_KEY,
+          'Origin': 'https://fruity-proxy.vercel.app',
+        'Referer': 'https://fruity-proxy.vercel.app',
+        'Host': 'fruity-proxy.vercel.app',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/114 Safari/537.36'
       }
     })
 
